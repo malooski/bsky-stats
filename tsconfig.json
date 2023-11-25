@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        // enable latest features
+        "lib": ["es2020", "dom"],
+        "module": "CommonJS",
+        "target": "ES2020",
+        "jsx": "react-jsx",
+
+        // best practices
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "downlevelIteration": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true
+    },
+
+    "include": ["src/**/*", "db/schema.ts"]
+}
