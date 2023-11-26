@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  # bsky-stats-frontend:
+  #   build:
+  #     context: .
+  #     dockerfile: frontend.Dockerfile
+  #     args:
+  #       - VITE_BACKEND_URL=${VITE_BACKEND_URL}
+  #   image: bsky-stats-frontend
+  #   env_file:
+  #     - .env
+  #   ports:
+  #     - 8080:8080
+  #   restart: always
+
+  # bsky-stats-backend:
+  #   build:
+  #     context: .
+  #     dockerfile: backend.Dockerfile
+  #   image: bsky-stats-backend
+  #   env_file:
+  #     - .env
+  #   ports:
+  #     - 3001:3001
+  #   restart: always
+
+  postgres:
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+volumes:
+  postgres_data:

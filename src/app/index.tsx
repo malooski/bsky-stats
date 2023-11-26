@@ -16,7 +16,6 @@ function App() {
     });
 
     const data = statsQuery.data ?? [];
-    const firstMs = data[0]?.ms ?? 0;
 
     return (
         <div>

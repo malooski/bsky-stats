@@ -2,9 +2,12 @@
     "compilerOptions": {
         // enable latest features
         "lib": ["es2020", "dom"],
-        "module": "CommonJS",
+        "module": "es2022",
         "target": "ES2020",
+        "moduleResolution": "Bundler",
+
         "jsx": "react-jsx",
+        "outDir": "dist/webapp",
 
         // best practices
         "strict": true,
@@ -12,8 +15,10 @@
         "skipLibCheck": true,
         "downlevelIteration": true,
         "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "checkJs": false
     },
 
-    "include": ["src/**/*", "db/schema.ts"]
+    "include": ["src/app/**/*", "src/common/**/*"],
+    "exclude": ["src/server/", "node_modules/"]
 }

@@ -1,0 +1,1 @@
+ALTER TABLE "globalStats" ALTER COLUMN "ms" SET DATA TYPE bigint;
